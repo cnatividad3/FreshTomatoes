@@ -20,6 +20,7 @@ $(document).ready(function () {
     searchDiv.addClass("card bg-light mb-3");
     headerDiv.addClass("card-header");
     bodyDiv.addClass("card-body row text-center");
+    headerDiv.text("Similar to " + userInput.trim());
     searchDiv
       .append(headerDiv)
       .append(bodyDiv);
@@ -70,10 +71,6 @@ $(document).ready(function () {
   })
 
   //write movie info from omdb to modal/ ratings movie clip
-
-
-
-
 
   // api test
 })
