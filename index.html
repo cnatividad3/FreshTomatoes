@@ -5,13 +5,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Fresh Tomatoes (Temp)</title>
 </head>
 
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="assets/javascript/script.js"></script>
 
+  <div class="container" id="main-content">
+
+    <!-- Sticky Header with Navbar -->
+    <header class="mb-2 sticky-top">
+      <div class="jumbotron jumbotron-fluid mb-0 py-3">
+        <h1 class="display-4">Title Here</h1>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false"><i class="fas fa-bars"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#"></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- Content Card (Classics) -->
+    <div class="card bg-light mb-3">
+      <div class="card-header">Header</div>
+      <div class="card-body row text-center">
+        <!-- Button trigger modal -->
+        <div class="col-6">
+          <img class="posterImg img-fluid my-2" src="https://via.placeholder.com/300x350" alt="placeholder1">
+        </div>
+        <div class="col-6">
+          <img class="posterImg img-fluid my-2" src="https://via.placeholder.com/300x350" alt="placeholder2">
+        </div>
+        <div class="col-6">
+          <img class="posterImg img-fluid my-2" src="https://via.placeholder.com/300x350" alt="placeholder3">
+        </div>
+        <div class="col-6">
+          <img class="posterImg img-fluid my-2" src="https://via.placeholder.com/300x350" alt="placeholder4">
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+  <script src="assets/javascript/script.js"></script>
 </body>
 
 </html>
