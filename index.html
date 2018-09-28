@@ -15,40 +15,38 @@
 
   <div class="container">
 
-    <header>
-      <div class="jumbotron jumbotron-fluid mb-2">
+    <!-- Sticky Header with Navbar -->
+    <header class= "mb-2">
+      <div class="jumbotron jumbotron-fluid mb-0">
         Stuff goes here.
       </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <ul class="nav ">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false"><i class="fa fa-cog"></i></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"></a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
     </header>
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <ul class="nav ">
-
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false"><i class="fas fa-cog"></i></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-
-      </ul>
-    </nav>
-
-
+    <!-- Content Card (Classics) -->
     <div class="card bg-light mb-3">
       <div class="card-header">Header</div>
       <div class="card-body row text-center">
@@ -58,7 +56,6 @@
             Launch demo modal
           </button>
         </div>
-
         <div class="col 6">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             Launch demo modal
@@ -68,9 +65,9 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade bd-example-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
