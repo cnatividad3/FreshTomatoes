@@ -74,9 +74,5 @@ $(document).ready(function () {
 
   //write movie info from omdb to modal/ ratings movie clip
 
-
-
-
-
   // api test
 })
