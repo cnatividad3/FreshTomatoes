@@ -1,16 +1,17 @@
-$(document).ready(function () {
+$("#find-movie").on("click", function (event) {
+
+  event.preventDefault();
+
+
   var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
-  var input = "nightcrawler";
-  var url = "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + input + "&language=en-US&page=1&include_adult=false"
-
-
-
+  var userInput = $("#movie-input").val();
+  var searchURL = "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + userInput + "&language=en-US&page=1&include_adult=false";
 
   $.ajax({
     url: searchURL,
     method: "GET"
   }).then(function (response) {
-    
+
     //temporary console log (returns searched movie ID)
     console.log(response.results[0].id);
 
@@ -23,6 +24,7 @@ $(document).ready(function () {
     searchDiv.addClass("card bg-light mb-3");
     headerDiv.addClass("card-header");
     bodyDiv.addClass("card-body row text-center");
+    headerDiv.text("Similar to " + userInput.trim());
     searchDiv
       .append(headerDiv)
       .append(bodyDiv);
