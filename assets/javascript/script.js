@@ -72,6 +72,30 @@ $("#find-movie").on("click", function (event) {
 
   $(document).on("click", ".posterImg", function () {
     $("#exampleModalCenter").modal("show");
+    console.log($(this).attr("alt"))
+    // ajax info for omdb
+    var recTitle = $(this).attr("alt")
+    var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=short&apikey=trilogy";
+
+    // ajax call for omdb
+    $.ajax({
+      url: recURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+      console.log(response.Plot);
+      var plot = response.Plot;
+      var actors = response.Actors;
+      var rating = response.Rated;
+      var released = response.Released;
+      var metascore = response.Metascore;
+      $("#exampleModalLongTitle").text(recTitle);
+      $("#modal-plot").text("Summary: " + plot);
+      $("#modal-actors").text("Cast: " + actors);
+      $("#modal-rated").text("Rated: " + rating);
+      $("#modal-released").text("Released Date: " + released);
+      $("#modal-rating").text("Rating: " + metascore + "/100");
+    })
   })
 
   //write movie info from omdb to modal/ ratings movie clip
