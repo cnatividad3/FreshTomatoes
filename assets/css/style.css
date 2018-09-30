@@ -6,3 +6,7 @@ posterImg {
   width: 100%;
   height: auto;
 }
+
+.title-text {
+  text-transform: capitalize;
+}

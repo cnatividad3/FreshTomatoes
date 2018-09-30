@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   })
 
-  //three ajax calls after the 
+  //three ajax calls after the user inputs a search term
 
   $("#find-movie").on("click", function (event) {
 
@@ -34,10 +34,16 @@ $(document).ready(function () {
       var searchDiv = $("<div>");
       var headerDiv = $("<div>");
       var bodyDiv = $("<div>");
+      var titleSpan = $("<span>");
       searchDiv.addClass("card bg-light mb-3");
       headerDiv.addClass("card-header");
       bodyDiv.addClass("card-body row text-center");
-      headerDiv.text("Similar to " + userInput.trim()); // need to capitalize the text
+      titleSpan
+        .addClass("title-text")
+        .text(response.results[0].title)
+      headerDiv
+        .text("Based on your search for: ")
+        .append(titleSpan);
       searchDiv
         .append(headerDiv)
         .append(bodyDiv);
