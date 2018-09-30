@@ -7,13 +7,14 @@ $(document).ready(function () {
     url: searchURL,
     method: "GET"
   }).then(function (response) {
-    
+
     //temporary console log (returns searched movie ID)
+    console.log(response.results[0]);
     console.log(response.results[0].id);
 
     var movieID = response.results[0].id;
     var recURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + apiKey + "&language=en-US&page=1"
-
+    
     var searchDiv = $("<div>");
     var headerDiv = $("<div>");
     var bodyDiv = $("<div>");
