@@ -1,32 +1,18 @@
 $(document).ready(function () {
-
-  //on click of element with .poster image, trigger modal
-  $(document).on("click", ".posterImg", function () {
-
-    //the modal text function will have to go here 
-
-    $("#exampleModalCenter").modal("show");
-
-  })
-
-  //three ajax calls after the user inputs a search term
-
   $("#find-movie").on("click", function (event) {
 
     event.preventDefault();
-
     var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
     var userInput = $("#movie-input").val();
     var searchURL = "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + userInput + "&language=en-US&page=1&include_adult=false";
-
-    //ajax call that returns the moviedb id for the searched movie
 
     $.ajax({
       url: searchURL,
       method: "GET"
     }).then(function (response) {
 
-      console.log(response.results[0]);
+      //temporary console log (returns searched movie ID)
+      console.log(response.results[0].id);
 
       var movieID = response.results[0].id;
       var recURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + apiKey + "&language=en-US&page=1"
@@ -34,29 +20,20 @@ $(document).ready(function () {
       var searchDiv = $("<div>");
       var headerDiv = $("<div>");
       var bodyDiv = $("<div>");
-      var titleSpan = $("<span>");
       searchDiv.addClass("card bg-light mb-3");
       headerDiv.addClass("card-header");
       bodyDiv.addClass("card-body row text-center");
-      titleSpan
-        .addClass("title-text")
-        .text(response.results[0].title)
-      headerDiv
-        .text("Based on your search for: ")
-        .append(titleSpan);
+      headerDiv.text("Similar to " + userInput.trim());
       searchDiv
         .append(headerDiv)
         .append(bodyDiv);
-
-      //ajax call that takes the movie id and returns an array of movie objects (recommendations)
 
       $.ajax({
         url: recURL,
         method: "GET"
       }).then(function (response) {
 
-        //for loop through the first 6 recommendation titles and runs an ajax call on their movie information
-
+        //for loop to get the reccomendation titles
         for (let i = 0; i < 6; i++) {
           var title = response.results[i].title;
           var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
@@ -80,7 +57,49 @@ $(document).ready(function () {
           })
         }
         $("#main-content").append(searchDiv);
+
       })
     });
+  })
+
+
+
+  //Enter Search term to find recommended movies
+  // hit button or press enter to search
+  // ajax call for to tastedive api
+  // return object of movie recs
+  //use movie rec title to call omdb for movie information
+  //write posters and titles of movies to page
+  //on click of poster pull modal
+
+  $(document).on("click", ".posterImg", function () {
+    $("#exampleModalCenter").modal("show");
+    console.log($(this).attr("alt"))
+    // ajax info for omdb
+    var recTitle = $(this).attr("alt")
+    var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=short&apikey=trilogy";
+
+    // ajax call for omdb
+    $.ajax({
+      url: recURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+      console.log(response.Plot);
+      var plot = response.Plot;
+      var actors = response.Actors;
+      var rating = response.Rated;
+      var released = response.Released;
+      var metascore = response.Metascore;
+      $("#exampleModalLongTitle").text(recTitle);
+      $("#modal-plot").text("Summary: " + plot);
+      $("#modal-actors").text("Cast: " + actors);
+      $("#modal-rated").text("Rated: " + rating);
+      $("#modal-released").text("Release Date: " + released);
+      $("#modal-rating").text("Rating: " + metascore + "/100");
+    })
+    //write movie info from omdb to modal/ ratings movie clip
+
+    // api test
   })
 })
