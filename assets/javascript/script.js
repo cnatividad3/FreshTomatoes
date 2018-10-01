@@ -94,9 +94,29 @@ $(document).ready(function () {
       $("#exampleModalLongTitle").text(recTitle);
       $("#modal-plot").text("Summary: " + plot);
       $("#modal-actors").text("Cast: " + actors);
+      // get rating number, convert it to a five star rating
+      // loop and make stars colored relative to the rating (round the ratings)
       $("#modal-rated").text("Rated: " + rating);
       $("#modal-released").text("Release Date: " + released);
-      $("#modal-rating").text("Rating: " + metascore + "/100");
+  
+      metascore = Math.round(metascore / 20);
+      
+      // emptying modal rating to start with 0 stars each time
+      $("#modal-rating").empty();
+
+      // display colored stars equal to metascore
+      for (var i = 1; i <= metascore; i++) {
+        var span = $("<span>");
+        span.addClass("fa fa-star checked");
+        $("#modal-rating").append(span);
+      }
+
+      // display non-colored stars
+      for (var i = 0; i < (5 - metascore); i++) {
+        var span = $("<span>");
+        span.addClass("fa fa-star");
+        $("#modal-rating").append(span);
+      }
     })
     //write movie info from omdb to modal/ ratings movie clip
 

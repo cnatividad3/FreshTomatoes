@@ -10,3 +10,7 @@ posterImg {
 .title-text {
   text-transform: capitalize;
 }
+
+.checked {
+  color: orange;
+}
