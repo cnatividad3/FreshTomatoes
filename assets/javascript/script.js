@@ -1,10 +1,14 @@
 $(document).ready(function () {
 
   //three ajax calls after the user inputs a search terms
+  var counter = 0;
 
   $("#find-movie").on("click", function (event) {
 
     event.preventDefault();
+
+    counter++;
+    console.log(counter);
 
     var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
     var userInput = $("#movie-input").val();
@@ -26,9 +30,13 @@ $(document).ready(function () {
       var headerDiv = $("<div>");
       var bodyDiv = $("<div>");
       var titleSpan = $("<span>");
+      var dummyAnchor = $("<a>");
       searchDiv.addClass("card bg-light mb-3");
       headerDiv.addClass("card-header");
       bodyDiv.addClass("card-body row text-center");
+      dummyAnchor
+        .addClass("dynamic-dummy-anchor")
+        .attr("id", "search" + counter)
       titleSpan
         .addClass("title-text")
         .text(response.results[0].title)
@@ -37,7 +45,16 @@ $(document).ready(function () {
         .append(titleSpan);
       searchDiv
         .append(headerDiv)
-        .append(bodyDiv);
+        .append(bodyDiv)
+        .prepend(dummyAnchor);
+
+      // create a button for the search term 
+      var dropDown = $("<a>");
+      dropDown
+        .addClass("dropdown-item")
+        .attr("href", "#search" + counter)
+        .text(response.results[0].title);
+      $("#dropdown").append(dropDown);
 
       //ajax call that takes the movie id and returns an array of movie objects (recommendations)
 
@@ -71,6 +88,12 @@ $(document).ready(function () {
           })
         }
         $("#main-content").append(searchDiv);
+
+        // scroll to latest search
+
+        $('html, body').animate({
+          scrollTop: ($("#search" + counter).offset().top)
+        }, 500);
       })
     });
   })
@@ -97,9 +120,11 @@ $(document).ready(function () {
       var rating = response.Rated;
       var released = response.Released;
       var metascore = response.Metascore;
+      var movieUrl = response.Poster;
       $("#exampleModalLongTitle").text(recTitle);
       $("#modal-plot").text("Summary: " + plot);
       $("#modal-actors").text("Cast: " + actors);
+      $("#modal-image").html("<img src=" + movieUrl + "></img>");
 
       // get rating number, convert it to a five star rating
       // loop and make stars colored relative to the rating (round the ratings)

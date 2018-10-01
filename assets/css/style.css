@@ -12,6 +12,22 @@
   text-transform: capitalize;
 }
 
+.dummy-anchor {
+  position: absolute;
+  left: 0px;
+  top: -100px;
+}
+
+.dynamic-dummy-anchor {
+  position: absolute;
+  left: 0px;
+  top: -100px;
+}
+
+.card {
+  position: relative;
+}
+  
 #stickyHeader {
   border-bottom: .5px solid red;
 }
