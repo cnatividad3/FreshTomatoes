@@ -2,11 +2,16 @@
   box-sizing: border-box;
 }
 
-posterImg {
+.posterImg {
   width: 100%;
-  height: auto;
+  height: 40vw;
+  object-fit: cover;
 }
 
 .title-text {
   text-transform: capitalize;
+}
+
+.checked {
+  color: orange;
 }
