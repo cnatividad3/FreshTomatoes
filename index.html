@@ -8,22 +8,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <title>Fresh Tomatoes (Temp)</title>
 </head>
+
 
 <body>
 
   <!-- Sticky Header with Navbar -->
-  <header class="container-fluid sticky-top">
+  <header class="container-fluid sticky-top" id="stickyHeader">
     <div class="row">
-      <div class="col-12 jumbotron jumbotron-fluid mb-0 py-2">
-        <h1 class="display-4">Title Here</h1>
+      <div class="col-12 header-style  mb-0 py-2">
+        <h1 class="display-4">Fresh<mark>Tomatoes</mark></h1>
       </div>
     </div>
     <!-- Nav bar -->
-    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Icon/Brand -->
-      <a class="navbar-brand" href="#">Icon</a>
+      <a class="navbar-brand" href="index.html"><img src="assets/images/tomato.svg" alt="icon"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,9 +43,8 @@
               Search Results
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
+              <a id="d-line" class="dropdown-item" href="#">Action</a>
+              <a id="d-line" class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Clear Search Results</a>
             </div>
           </li>
@@ -50,7 +52,7 @@
         <!-- Form Submission -->
         <form class="form-inline my-2 my-lg-0" id="search">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="movie-input">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="find-movie">Search</button>
+          <button class="btn  my-2 my-sm-0" type="submit" id="find-movie">Search</button>
         </form>
       </div>
     </nav>
@@ -59,7 +61,7 @@
   <!-- Main-content container -->
   <div class="container" id="main-content">
     <!-- Content Card (Classics) -->
-    <div class="card bg-light mb-3">
+    <div class="card mb-3">
       <div class="card-header">Classics</div>
       <div class="card-body row text-center">
         <!-- Poster Images, will toggle modal -->

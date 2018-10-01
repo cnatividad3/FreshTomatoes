@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
 }
 
 posterImg {
@@ -9,4 +10,103 @@ posterImg {
 
 .title-text {
   text-transform: capitalize;
+}
+
+#stickyHeader {
+  border-bottom: 1px solid red;
+}
+
+.navbar-brand {
+  width: 37px;
+  height: 37px;
+  position: relative;
+  bottom: 7px;
+  left: 8px;
+}
+
+.nav-item {
+  font-size: 20px;
+  margin-bottom: -20px;
+  padding-bottom: 10px;
+}
+
+.dropdown-item {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Pattaya', sans-serif;
+  margin-bottom: -20px;
+}
+
+.display-4 {
+  font-size: 45px;
+  position: relative;
+  bottom: 5px;
+}
+
+mark {
+  color: red;
+  background-color: transparent;
+  padding: 0px;
+
+}
+
+.header-style {
+  background-color: #d9d9d9;
+}
+
+.nav-link {
+  font-family: 'Pattaya', sans-serif;
+}
+
+#find-movie {
+  font-family: 'Pattaya', sans-serif;
+}
+
+.dropdown-menu {
+  background-color: white;
+
+}
+
+#d-line {
+  border-bottom: 1px solid black;
+}
+
+.btn {
+  color: black;
+}
+
+.form-control {
+  background-color: white;
+}
+
+#find-movie {
+  background-color: #d9d9d9;
+  font-size: 16px;
+  
+}
+
+.card-header {
+  background-color: rgb(53, 58, 63);
+  text-shadow: 1px 1px red;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 0px;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.card {
+  background-color: #d9d9d9;
+  border: 1px solid red;
+
+}
+
+body {
+  background-color: #8c8c8c;
+}
+
+.posterImg {
+  border: 1px solid black;
 }
