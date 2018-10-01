@@ -10,3 +10,19 @@ posterImg {
 .title-text {
   text-transform: capitalize;
 }
+
+.dummy-anchor {
+  position: absolute;
+  left: 0px;
+  top: -200px;
+}
+
+.dynamic-dummy-anchor {
+  position: absolute;
+  left: 0px;
+  top: -200px;
+}
+
+.card {
+  position: relative;
+}

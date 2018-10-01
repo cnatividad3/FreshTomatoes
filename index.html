@@ -40,8 +40,7 @@
               Search Results
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <div id="dropdown"></div>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Clear Search Results</a>
             </div>
@@ -59,6 +58,7 @@
   <!-- Main-content container -->
   <div class="container" id="main-content">
     <!-- Content Card (Classics) -->
+    <a class="dummy-anchor" id="classics"></a>
     <div class="card bg-light mb-3">
       <div class="card-header">Classics</div>
       <div class="card-body row text-center">
@@ -89,15 +89,16 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="trailer">
-            iframe Placeholder
-          </div>
-          <div class="modal-body" id="modal-actors"></div>
-          <div class="modal-body" id="modal-rated"></div>
-          <div class="modal-body" id="modal-rating"></div>
-          <div class="modal-body" id="modal-released"></div>
-          <div class="modal-body" id="modal-plot">
-            ...
+          <div class="row">
+            <div class="col-6" id="modal-image"></div>
+            <div class="col-6">
+              <div class="modal-body" id="modal-actors"></div>
+              <div class="modal-body" id="modal-rated"></div>
+              <div class="modal-body" id="modal-rating"></div>
+              <div class="modal-body" id="modal-released"></div>
+              <div class="modal-body" id="modal-plot"></div>
+            </div>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
