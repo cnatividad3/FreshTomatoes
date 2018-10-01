@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 
 .posterImg {
@@ -15,8 +14,6 @@
 
 #stickyHeader {
   border-bottom: .5px solid red;
-  
-
 }
 
 .navbar-brand {
@@ -63,7 +60,6 @@ mark {
   color: red;
   background-color: transparent;
   padding: 0px;
-
 }
 
 .header-style {
@@ -84,14 +80,10 @@ mark {
 
 .dropdown-menu {
   background-color: white;
-
 }
 
-
-
 .btn {
-  color:white;
-
+  color: white;
 }
 
 .form-control {
@@ -101,7 +93,6 @@ mark {
 #find-movie {
   background-color: red;
   font-size: 16px;
-
 }
 
 .card-header {
@@ -128,6 +119,7 @@ body {
 .posterImg {
   border: 1px solid black;
 }
+
 .checked {
   color: orange;
 }
