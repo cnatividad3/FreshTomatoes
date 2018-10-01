@@ -13,43 +13,56 @@
 
 <body>
 
-  <div class="container" id="main-content">
-
-    <!-- Sticky Header with Navbar -->
-    <header class="mb-2 sticky-top">
-      <div class="jumbotron jumbotron-fluid mb-0 py-3">
+  <!-- Sticky Header with Navbar -->
+  <header class="container-fluid sticky-top">
+    <div class="row">
+      <div class="col-12 jumbotron jumbotron-fluid mb-0 py-2">
         <h1 class="display-4">Title Here</h1>
       </div>
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+    </div>
+    <!-- Nav bar -->
+    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Icon/Brand -->
+      <a class="navbar-brand" href="#">Icon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Home/Dropdown(Hides on Shrink) -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#classics">Classics<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false"><i class="fas fa-bars"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"></a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Search Results
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="dropdown-item" href="#">Clear Search Results</a>
             </div>
           </li>
-          <form class="form-inline" id="search">
-            <input class="form-control mr-sm-2" id="movie-input" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" id="find-movie" type="submit">Search</button>
-          </form>
         </ul>
-      </nav>
+        <!-- Form Submission -->
+        <form class="form-inline my-2 my-lg-0" id="search">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="movie-input">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="find-movie">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
 
-    </header>
-
+  <!-- Main-content container -->
+  <div class="container" id="main-content">
     <!-- Content Card (Classics) -->
     <div class="card bg-light mb-3">
-      <div class="card-header">Header</div>
+      <div class="card-header">Classics</div>
       <div class="card-body row text-center">
-        <!-- Button trigger modal -->
+        <!-- Poster Images, will toggle modal -->
         <div class="col-6">
           <img class="posterImg img-fluid my-2" src="https://via.placeholder.com/300x350" alt="placeholder1">
         </div>
@@ -77,7 +90,8 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <!-- Data/ajax response goes here -->
+            ... 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
