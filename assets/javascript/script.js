@@ -2,8 +2,6 @@ $(document).ready(function () {
   $("#find-movie").on("click", function (event) {
 
     event.preventDefault();
-
-
     var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
     var userInput = $("#movie-input").val();
     var searchURL = "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + userInput + "&language=en-US&page=1&include_adult=false";
@@ -62,17 +60,18 @@ $(document).ready(function () {
 
       })
     });
-
-    //Enter Search term to find recommended movies
-    // hit button or press enter to search
-    // ajax call for to tastedive api
-    // return object of movie recs
-    //use movie rec title to call omdb for movie information
-    //write posters and titles of movies to page
-    //on click of poster pull modal
-
-
   })
+
+
+
+  //Enter Search term to find recommended movies
+  // hit button or press enter to search
+  // ajax call for to tastedive api
+  // return object of movie recs
+  //use movie rec title to call omdb for movie information
+  //write posters and titles of movies to page
+  //on click of poster pull modal
+
   $(document).on("click", ".posterImg", function () {
     $("#exampleModalCenter").modal("show");
     console.log($(this).attr("alt"))
@@ -103,4 +102,4 @@ $(document).ready(function () {
 
     // api test
   })
-});
+})
