@@ -28,7 +28,7 @@ $(document).ready(function () {
       url: recURL,
       method: "GET"
     }).then(function (response) {
-
+      console.log(response)
       //for loop to get the reccomendation titles
       for (let i = 0; i < 6; i++) {
         var title = response.results[i].title;
