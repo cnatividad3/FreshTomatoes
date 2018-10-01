@@ -13,7 +13,7 @@ posterImg {
 }
 
 #stickyHeader {
-  border-bottom: 1px solid red;
+  border-bottom: .5px solid red;
 }
 
 .navbar-brand {
@@ -30,8 +30,19 @@ posterImg {
   padding-bottom: 10px;
 }
 
+#navbarDropdown {
+  color: white;
+}
+
 .dropdown-item {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+#d-line {
+  border-bottom: 1px solid black;
+  font-size: 15px;
 }
 
 h1 {
@@ -60,6 +71,10 @@ mark {
   font-family: 'Pattaya', sans-serif;
 }
 
+.navbar-nav {
+  color: white;
+}
+
 #find-movie {
   font-family: 'Pattaya', sans-serif;
 }
@@ -69,12 +84,11 @@ mark {
 
 }
 
-#d-line {
-  border-bottom: 1px solid black;
-}
+
 
 .btn {
-  color: black;
+  color:white;
+
 }
 
 .form-control {
@@ -82,9 +96,9 @@ mark {
 }
 
 #find-movie {
-  background-color: #d9d9d9;
+  background-color: red;
   font-size: 16px;
-  
+
 }
 
 .card-header {
@@ -95,11 +109,12 @@ mark {
   font-size: 30px;
   padding: 0px;
   font-family: 'Pattaya', sans-serif;
+  border-right: .5px solid red;
 }
 
 .card {
   background-color: #d9d9d9;
-  border: 1px solid red;
+  border: .5px solid red;
 
 }
 
