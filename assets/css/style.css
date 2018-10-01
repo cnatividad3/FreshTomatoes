@@ -15,13 +15,13 @@
 .dummy-anchor {
   position: absolute;
   left: 0px;
-  top: -200px;
+  top: -100px;
 }
 
 .dynamic-dummy-anchor {
   position: absolute;
   left: 0px;
-  top: -200px;
+  top: -100px;
 }
 
 .card {
