@@ -242,4 +242,11 @@ body {
   margin-right: 5%;
   padding: 0;
   text-align: justify;
+  font-family: 'Merriweather', serif;
+}
+
+#errorBody {
+  text-align: center;
+  margin-top: 5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
