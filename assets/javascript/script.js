@@ -42,7 +42,7 @@ $(document).ready(function () {
       var bodyDiv = $("<div>");
       var titleSpan = $("<span>");
       var dummyAnchor = $("<a>");
-      searchDiv.addClass("card bg-light mb-3");
+      searchDiv.addClass("card bg-light mb-3 dynamic");
       headerDiv.addClass("card-header");
       bodyDiv.addClass("card-body row text-center");
       dummyAnchor
@@ -185,5 +185,12 @@ $(document).ready(function () {
         $("#modal-rating").append(span);
       }
     })
+  })
+
+  // clear search results button
+
+  $("#clear").on("click", function() {
+    $("#dropdown").empty();
+    $(".dynamic").remove();
   })
 })
