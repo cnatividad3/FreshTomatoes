@@ -7,7 +7,7 @@ mark {
   color: red;
   background-color: transparent;
   padding: 0px;
-  text-shadow: 1px 1px green;
+  text-shadow: 1.5px 1.5px green;
 }
 
 body {
@@ -21,11 +21,22 @@ body {
   background-color: #d9d9d9;
   font-family: 'Pattaya', sans-serif;
   font-size: 45px;
-  position: relative;
+  
 }
 
 .header-style h1 {
   margin-bottom: 0;
+  position: relative;
+  top: 4px;
+}
+
+.modal-header {
+  font-family: 'Pattaya', sans-serif;
+  border-bottom: 2px solid green;
+}
+
+.modal-title {
+  font-size: 30px;
 }
 
 .navbar-brand {
@@ -72,7 +83,7 @@ body {
   font-size: 30px;
   padding: 0px;
   font-family: 'Pattaya', sans-serif;
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid green;
 }
 
 .title-text {
@@ -164,10 +175,21 @@ body {
   color: #FFC107;
 }
 
+.slogan {
+  float: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+  position: relative;
+  bottom: 28px;
+  margin-bottom: -30px;
+}
+
 /* IDs */
 
+
 #stickyHeader {
-  border-bottom: .5px solid red;
+  border-bottom: 1px solid red;
 }
 
 #navbarDropdown {
