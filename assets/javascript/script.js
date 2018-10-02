@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  
   //Counter variable for dropdown menu
   var counter = 0;
   errorID = false;
@@ -95,7 +95,7 @@ $(document).ready(function () {
           console.log(response.results);
           var title = response.results[i].title;
 
-          var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
+          var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=full&apikey=trilogy";
           url = infoURL;
           $.ajax({
             url: url,
@@ -105,12 +105,13 @@ $(document).ready(function () {
 
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-2");
+            movieDiv.addClass("col-2 reveal");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
                 "src": response.Poster,
-                "alt": response.Title
+                "alt": response.Title,
+                "id": "reveal" + i
               });
             movieDiv.append(movieImg);
             bodyDiv.append(movieDiv);
@@ -122,7 +123,7 @@ $(document).ready(function () {
 
         $('html, body').animate({
           scrollTop: ($("#search" + counter).offset().top)
-        }, 500);
+        }, 1000);
       })
     });
   })
@@ -134,7 +135,7 @@ $(document).ready(function () {
     // ajax info for omdb
 
     var recTitle = $(this).attr("alt")
-    var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=short&apikey=trilogy";
+    var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=full&apikey=trilogy";
 
 
     // ajax call for omdb
