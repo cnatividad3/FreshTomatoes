@@ -120,3 +120,20 @@ body {
   background-color: red;
   font-size: 16px;
 }
+
+/* Modal */
+
+.modal-content {
+  background-color: #d9d9d9;
+}
+
+.modal-header {
+  background-color: rgb(53, 58, 63);
+  text-shadow: 1px 1px red;
+  color: white;
+  text-align: center;
+}
+
+.modal-footer {
+  background-color: rgb(53, 58, 63);
+}
