@@ -76,7 +76,7 @@ $(document).ready(function () {
             console.log(response);
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-4");
+            movieDiv.addClass("col-4 animate");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
         $('html, body').animate({
           scrollTop: ($("#search" + counter).offset().top)
-        }, 500);
+        }, 1000);
       })
     });
   })
@@ -154,4 +154,6 @@ $(document).ready(function () {
       }
     })
   })
+
+  
 })
