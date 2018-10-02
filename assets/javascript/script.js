@@ -2,6 +2,9 @@ $(document).ready(function () {
 
   //Counter variable for dropdown menu
   var counter = 0;
+  var counter2 = 0;
+  var errorID = false;
+  var errorRec = false;
 
   //Three ajax calls after the user inputs a search terms
 
@@ -10,7 +13,6 @@ $(document).ready(function () {
     event.preventDefault();
 
     counter++;
-    console.log(counter);
 
     var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
     var userInput = $("#movie-input").val();
@@ -22,12 +24,17 @@ $(document).ready(function () {
       url: searchURL,
       method: "GET"
     }).then(function (response) {
-
-      console.log(response.results[0]);
-
+      //this is where we check if the user input is valid
+      if (response.results.length === 0) {
+        errorID = true;
+      }
+      if (errorID === true) {
+        $("#errorModal").modal("show");
+        errorID = false;
+      }
       var movieID = response.results[0].id;
       var recURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + apiKey + "&language=en-US&page=1"
-
+      console.log(recURL);
       var searchDiv = $("<div>");
       var headerDiv = $("<div>");
       var bodyDiv = $("<div>");
@@ -68,7 +75,10 @@ $(document).ready(function () {
         //for loop through the first 6 recommendation titles and runs an ajax call on their movie information
 
         for (let i = 0; i < 12; i++) {
+          //where the conditinal if there are recommendation
+          console.log(response.results);
           var title = response.results[i].title;
+
           var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
           url = infoURL;
           $.ajax({
@@ -101,7 +111,7 @@ $(document).ready(function () {
   })
 
   $(document).on("click", ".posterImg", function () {
-    $("#exampleModalCenter").modal("show");
+    $("#movieModal").modal("show");
     console.log($(this).attr("alt"))
 
     // ajax info for omdb
@@ -123,7 +133,7 @@ $(document).ready(function () {
       var released = response.Released;
       var metascore = response.Metascore;
       var movieUrl = response.Poster;
-      $("#exampleModalLongTitle").text(recTitle);
+      $("#movieModalTitle").text(recTitle);
       $("#modal-plot").text("Summary: " + plot);
       $("#modal-actors").text("Cast: " + actors);
       $("#modal-image").html("<img src=" + movieUrl + "></img>");
@@ -147,7 +157,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star checked");
         $("#modal-rating").append(span);
       }
-      
+
       // display non-colored stars
 
       for (var i = 0; i < (5 - metascore); i++) {
@@ -157,4 +167,5 @@ $(document).ready(function () {
       }
     })
   })
+
 })
