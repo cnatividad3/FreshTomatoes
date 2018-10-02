@@ -2,6 +2,8 @@ $(document).ready(function () {
   
   //Counter variable for dropdown menu
   var counter = 0;
+  errorID = false;
+  errorRec = false;
 
   //Three ajax calls after the user inputs a search terms
 
@@ -22,6 +24,17 @@ $(document).ready(function () {
       url: searchURL,
       method: "GET"
     }).then(function (response) {
+
+      if (response.results.length === 0) {
+        errorID = true;
+      }
+      if (errorID === true) {
+        $("#errorBody").text("Not a valid search!")
+        $("#errorModal").modal("show");
+        errorID = false;
+      }
+
+
 
       console.log(response.results[0]);
 
@@ -50,6 +63,9 @@ $(document).ready(function () {
         .append(bodyDiv)
         .prepend(dummyAnchor);
 
+
+
+
       // create a button for the search term 
       var dropDown = $("<a>");
       dropDown
@@ -64,8 +80,19 @@ $(document).ready(function () {
         url: recURL,
         method: "GET"
       }).then(function (response) {
+        console.log(response);
+        //error recs modal
+        if (response.results.length === 0) {
+          errorRec = true;
+        }
+        if (errorRec === true) {
+          $("#errorBody").text("No recommendations available!")
+          $("#errorModal").modal("show");
+          errorRec = false;
+        }
 
         //for loop through the first 6 recommendation titles and runs an ajax call on their movie information
+
 
         for (let i = 0; i < 12; i++) {
           var title = response.results[i].title;
@@ -76,6 +103,7 @@ $(document).ready(function () {
             method: "GET"
           }).then(function (response) {
             console.log(response);
+
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
             movieDiv.addClass("col-2 reveal");
@@ -109,6 +137,7 @@ $(document).ready(function () {
 
     var recTitle = $(this).attr("alt")
     var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=short&apikey=trilogy";
+
 
     // ajax call for omdb
 
@@ -158,4 +187,6 @@ $(document).ready(function () {
       }
     })
   })
+
+
 })

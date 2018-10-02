@@ -7,6 +7,7 @@ mark {
   color: red;
   background-color: transparent;
   padding: 0px;
+  text-shadow: 1px 1px green;
 }
 
 body {
@@ -60,7 +61,7 @@ body {
 .card {
   position: relative;
   background-color: #d9d9d9;
-  border: .5px solid red;
+  
 }
 
 .card-header {
@@ -71,6 +72,7 @@ body {
   font-size: 30px;
   padding: 0px;
   font-family: 'Pattaya', sans-serif;
+  border-bottom: 1px solid green;
 }
 
 .title-text {
