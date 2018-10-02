@@ -17,13 +17,13 @@ body {
 
 /* Navbar classes */
 .header-style {
-  background-color:#d9d9d9;
+  background-color: #d9d9d9;
   font-family: 'Pattaya', sans-serif;
   font-size: 45px;
   position: relative;
 }
 
-.header-style h1{
+.header-style h1 {
   margin-bottom: 0;
 }
 
@@ -60,6 +60,7 @@ body {
 .card {
   position: relative;
   background-color: #d9d9d9;
+  border: .5px solid red;
 }
 
 .card-header {
@@ -99,7 +100,7 @@ body {
 /* Stars color for rating in modal*/
 
 .checked {
-  color: #FFC107  ;
+  color: #FFC107;
 }
 
 /* IDs */
