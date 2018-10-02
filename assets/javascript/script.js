@@ -147,6 +147,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star checked");
         $("#modal-rating").append(span);
       }
+      
       // display non-colored stars
 
       for (var i = 0; i < (5 - metascore); i++) {
