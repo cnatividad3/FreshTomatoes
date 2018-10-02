@@ -32,8 +32,6 @@ $(document).ready(function () {
         errorID = false;
       }
 
-
-
       console.log(response.results[0]);
 
       var movieID = response.results[0].id;
@@ -153,7 +151,7 @@ $(document).ready(function () {
       var released = response.Released;
       var metascore = response.Metascore;
       var movieUrl = response.Poster;
-      $("#movieModalTitle").text(recTitle);
+      $("#movieModalLongTitle").text(recTitle);
       $("#modal-plot").text("Summary: " + plot);
       $("#modal-actors").text("Cast: " + actors);
       $("#modal-image").html("<img src=" + movieUrl + "></img>");
@@ -187,5 +185,4 @@ $(document).ready(function () {
       }
     })
   })
-
 })
