@@ -153,15 +153,15 @@ $(document).ready(function () {
       var metascore = response.Metascore;
       var movieUrl = response.Poster;
       $("#movieModalLongTitle").text(recTitle);
-      $("#modal-plot").text("Summary: " + plot);
-      $("#modal-actors").text("Cast: " + actors);
+      $("#modal-plot").html("<strong>Summary:</strong> " + plot);
+      $("#modal-actors").html("<strong>Cast:</strong> " + actors);
       $("#modal-image").html("<img src=" + movieUrl + "></img>");
 
       // get rating number, convert it to a five star rating
       // loop and make stars colored relative to the rating (round the ratings)
 
-      $("#modal-rated").text("Rated: " + rating);
-      $("#modal-released").text("Release Date: " + released);
+      $("#modal-rated").html("<strong>Rated:</strong> " + rating);
+      $("#modal-released").html("<strong>Release Date:</strong> " + released);
 
       metascore = Math.round(metascore / 20);
 
