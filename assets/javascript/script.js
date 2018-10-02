@@ -1,14 +1,17 @@
 $(document).ready(function () {
 
-  //three ajax calls after the user inputs a search terms
+  //Counter variable for dropdown menu
   var counter = 0;
+  errorID = false;
+  errorRec = false;
+
+  //Three ajax calls after the user inputs a search terms
 
   $("#find-movie").on("click", function (event) {
 
     event.preventDefault();
 
     counter++;
-    console.log(counter);
 
     var apiKey = "f77c80e6ca6916fa5bf4047e67f042fb";
     var userInput = $("#movie-input").val();
@@ -20,12 +23,20 @@ $(document).ready(function () {
       url: searchURL,
       method: "GET"
     }).then(function (response) {
+      if (response.results.length === 0) {
+        errorID = true;
+      }
+      if (errorID === true) {
+        $("#errorBody").text("Not a valid search!")
+        $("#errorModal").modal("show");
+        errorID = false;
+      }
 
       console.log(response.results[0]);
 
       var movieID = response.results[0].id;
       var recURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + apiKey + "&language=en-US&page=1"
-
+      console.log(recURL);
       var searchDiv = $("<div>");
       var headerDiv = $("<div>");
       var bodyDiv = $("<div>");
@@ -48,6 +59,9 @@ $(document).ready(function () {
         .append(bodyDiv)
         .prepend(dummyAnchor);
 
+
+
+
       // create a button for the search term 
       var dropDown = $("<a>");
       dropDown
@@ -62,11 +76,25 @@ $(document).ready(function () {
         url: recURL,
         method: "GET"
       }).then(function (response) {
+        console.log(response);
+        //error recs modal
+        if (response.results.length === 0) {
+          errorRec = true;
+        }
+        if (errorRec === true) {
+          $("#errorBody").text("No recommendations available!")
+          $("#errorModal").modal("show");
+          errorRec = false;
+        }
 
         //for loop through the first 6 recommendation titles and runs an ajax call on their movie information
 
-        for (let i = 0; i < 6; i++) {
+
+        for (let i = 0; i < 12; i++) {
+          //where the conditinal if there are recommendation
+          console.log(response.results);
           var title = response.results[i].title;
+
           var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
           url = infoURL;
           $.ajax({
@@ -74,9 +102,10 @@ $(document).ready(function () {
             method: "GET"
           }).then(function (response) {
             console.log(response);
+
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-4");
+            movieDiv.addClass("col-2");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
@@ -99,13 +128,14 @@ $(document).ready(function () {
   })
 
   $(document).on("click", ".posterImg", function () {
-    $("#exampleModalCenter").modal("show");
+    $("#movieModal").modal("show");
     console.log($(this).attr("alt"))
 
     // ajax info for omdb
 
     var recTitle = $(this).attr("alt")
     var recURL = "https://www.omdbapi.com/?t=" + recTitle + "&y=&plot=short&apikey=trilogy";
+
 
     // ajax call for omdb
 
@@ -121,7 +151,7 @@ $(document).ready(function () {
       var released = response.Released;
       var metascore = response.Metascore;
       var movieUrl = response.Poster;
-      $("#exampleModalLongTitle").text(recTitle);
+      $("#movieModalLongTitle").text(recTitle);
       $("#modal-plot").text("Summary: " + plot);
       $("#modal-actors").text("Cast: " + actors);
       $("#modal-image").html("<img src=" + movieUrl + "></img>");
@@ -145,7 +175,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star checked");
         $("#modal-rating").append(span);
       }
-      
+
       // display non-colored stars
 
       for (var i = 0; i < (5 - metascore); i++) {
