@@ -81,7 +81,7 @@ body {
 
 .posterImg {
   width: auto;
-  height: 18.5vw;
+  height: 18vw;
   object-fit: cover;
   border: 1px solid black;
   -webkit-animation: fadein 1.8s;
@@ -207,7 +207,7 @@ body {
 }
 
 #modal-image img {
-  width: 100%;
+  width: 95%;
   height: auto;
   margin: 5%;
   object-fit: cover;

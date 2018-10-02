@@ -59,10 +59,8 @@ $(document).ready(function () {
         .append(bodyDiv)
         .prepend(dummyAnchor);
 
-
-
-
       // create a button for the search term 
+
       var dropDown = $("<a>");
       dropDown
         .addClass("dropdown-item")
