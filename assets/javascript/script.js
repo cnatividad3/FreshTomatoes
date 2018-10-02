@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
-  //three ajax calls after the user inputs a search terms
+  //Counter variable for dropdown menu
   var counter = 0;
+
+  //Three ajax calls after the user inputs a search terms
 
   $("#find-movie").on("click", function (event) {
 
@@ -65,7 +67,7 @@ $(document).ready(function () {
 
         //for loop through the first 6 recommendation titles and runs an ajax call on their movie information
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 12; i++) {
           var title = response.results[i].title;
           var infoURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
           url = infoURL;
@@ -76,7 +78,7 @@ $(document).ready(function () {
             console.log(response);
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-4 animate");
+            movieDiv.addClass("col-2");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
@@ -145,6 +147,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star checked");
         $("#modal-rating").append(span);
       }
+      
       // display non-colored stars
 
       for (var i = 0; i < (5 - metascore); i++) {
