@@ -30,6 +30,16 @@ body {
   top: 4px;
 }
 
+.slogan {
+  float: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+  position: relative;
+  bottom: 28px;
+  margin-bottom: -30px;
+}
+
 .modal-header {
   font-family: 'Pattaya', sans-serif;
   border-bottom: 2px solid white;
@@ -175,16 +185,6 @@ body {
   color: #FFC107;
 }
 
-.slogan {
-  float: right;
-  color: black;
-  font-size: 20px;
-  font-family: 'Merriweather', serif;
-  position: relative;
-  bottom: 28px;
-  margin-bottom: -30px;
-}
-
 /* IDs */
 
 
@@ -224,6 +224,14 @@ body {
   padding-top: 3%;
 }
 
+.modal-body {
+  margin-bottom: 5.0%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
+  text-align: justify;
+}
+
 .modal-footer {
   background-color: rgb(53, 58, 63);
 }
@@ -236,12 +244,10 @@ body {
   justify-content: center;
 }
 
-.modal-body {
-  margin-bottom: 5.0%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 0;
-  text-align: justify;
+#errorBody {
+  text-align: center;
+  margin-top: 5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* media queries */
@@ -251,4 +257,5 @@ body {
   display: none;
 }
 
+  font-family: 'Merriweather', serif;
 }
