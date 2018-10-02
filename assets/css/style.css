@@ -30,6 +30,15 @@ body {
   top: 4px;
 }
 
+.modal-header {
+  font-family: 'Pattaya', sans-serif;
+  border-bottom: 2px solid green;
+}
+
+.modal-title {
+  font-size: 30px;
+}
+
 .navbar-brand {
   position: relative;
   width: 37px;
