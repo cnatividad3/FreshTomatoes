@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  
   //Counter variable for dropdown menu
   var counter = 0;
 
@@ -78,12 +78,13 @@ $(document).ready(function () {
             console.log(response);
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-2");
+            movieDiv.addClass("col-2 reveal");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
                 "src": response.Poster,
-                "alt": response.Title
+                "alt": response.Title,
+                "id": "reveal" + i
               });
             movieDiv.append(movieImg);
             bodyDiv.append(movieDiv);
@@ -147,7 +148,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star checked");
         $("#modal-rating").append(span);
       }
-      
+
       // display non-colored stars
 
       for (var i = 0; i < (5 - metascore); i++) {
@@ -157,6 +158,4 @@ $(document).ready(function () {
       }
     })
   })
-
-  
 })
