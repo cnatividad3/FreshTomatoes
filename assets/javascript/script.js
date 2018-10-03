@@ -42,7 +42,7 @@ $(document).ready(function () {
       var bodyDiv = $("<div>");
       var titleSpan = $("<span>");
       var dummyAnchor = $("<a>");
-      searchDiv.addClass("card bg-light mb-3 dynamic");
+      searchDiv.addClass("card row mb-3 dynamic");
       headerDiv.addClass("card-header");
       bodyDiv.addClass("card-body row text-center");
       dummyAnchor
@@ -103,7 +103,7 @@ $(document).ready(function () {
 
             var movieDiv = $("<div>");
             var movieImg = $("<img>");
-            movieDiv.addClass("col-2 reveal");
+            movieDiv.addClass("col-4 col-md-3 col-lg-2 img-div reveal");
             movieImg
               .addClass("posterImg img-fluid my-2")
               .attr({
