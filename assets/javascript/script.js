@@ -130,6 +130,13 @@ $(document).ready(function () {
   $(document).on("click", ".posterImg", function () {
     $("#movieModal").modal("show");
     console.log($(this).attr("alt"))
+    
+    // style modal
+    
+    var stickyHeader = $("#stickyHeader");
+    var modal = $("#movieModal");
+    modal.attr("style", "padding-right:0px;");
+    stickyHeader.attr("style", "padding-right:10px;margin-right:0px;padding-left:10px;margin-left:0px;")
 
     // ajax info for omdb
 
@@ -193,5 +200,11 @@ $(document).ready(function () {
   $("#clear").on("click", function() {
     $("#dropdown").empty();
     $(".dynamic").remove();
-  })
+  });
+
+  // fix modal styling
+
+  
+    
+  
 })
