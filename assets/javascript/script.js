@@ -7,8 +7,8 @@ $(document).ready(function () {
 
   //Three ajax calls after the user inputs a search terms
 
-  $("#find-movie").on("click", function (event) {
-
+  $("#search").on("submit", function (event) {
+    
     event.preventDefault();
 
     counter++;
@@ -121,9 +121,10 @@ $(document).ready(function () {
 
         $('html, body').animate({
           scrollTop: ($("#search" + counter).offset().top)
-        }, 1000);
+        }, 1100);
       })
     });
+    $("#search")[0].reset();
   })
 
   $(document).on("click", ".posterImg", function () {
@@ -166,6 +167,7 @@ $(document).ready(function () {
       // emptying modal rating to start with 0 stars each time
 
       $("#modal-rating").empty();
+      $("#modal-rating").html("<strong>Rating:</strong> ");
 
       // display colored stars equal to metascore
 
@@ -182,6 +184,7 @@ $(document).ready(function () {
         span.addClass("fa fa-star");
         $("#modal-rating").append(span);
       }
+
     })
   })
 

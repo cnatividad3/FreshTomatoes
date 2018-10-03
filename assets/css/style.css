@@ -105,79 +105,18 @@ body {
   width: auto;
   height: 34vh;
   object-fit: cover;
-  border: 1px solid black;
-  -webkit-animation: fadein 1.5s;
-  -moz-animation: fadein 1.5s;
-  -ms-animation: fadein 1.5s;
-  -o-animation: fadein 1.5s;
-  animation: fadein 1.5s;
+  border: 1px solid #DFDFDF;
+  -webkit-animation: fadein 2.0s;
+  -moz-animation: fadein 2.0s;
+  -ms-animation: fadein 2.0s;
+  -o-animation: fadein 2.0s;
+  animation: fadein 2.0s;
 }
 
 .posterImg:hover {
   cursor: pointer;
-  border: 1px solid #E9F0F2;
-}
-
-/* Modal */
-
-.modal-header {
-  font-family: 'Pattaya', sans-serif;
-  border-bottom: 2px solid white;
-  background-color: #252A3D;
-  text-shadow: 1px 1px black;
-  color: white;
-  text-align: center;
-}
-
-.modal-title {
-  font-size: 30px;
-  width: 100%;
-}
-
-.modal-content {
-  background-color: white;
-}
-
-.modal-info {
-  color: rgb(53, 58, 63);
-  padding-top: 3%;
-  padding-left: 0;
-}
-
-.modal-body {
-  font-family: "Open Sans", sans-serif;
-  margin-bottom: 5%;
-  margin-left: 0%;
-  margin-right: 5%;
-  padding: 0;
-  text-align: justify;
-}
-
-.modal-body strong {
-  font-weight: 2000;
-}
-
-.modal-footer {
-  background-color: #252A3D;
-}
-
-#modal-image {
-  padding-right: 0;
-}
-
-#modal-image img {
-  width: 90%;
-  height: auto;
-  margin: 5%;
-  padding-left: 0;
-  object-fit: cover;
-  justify-content: center;
-}
-
-#errorBody {
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  margin-top: 5%;
+  /* border: 1px solid #E9F0F2; */
+  filter: brightness(130%);
 }
 
 /* .posterImg animation */
@@ -233,6 +172,68 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/* Modal */
+
+.modal-header {
+  font-family: 'Pattaya', sans-serif;
+  border-bottom: 2px solid white;
+  background-color: #252A3D;
+  text-shadow: 1px 1px black;
+  color: white;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 30px;
+  width: 100%;
+}
+
+.modal-content {
+  background-color: white;
+}
+
+.modal-info {
+  color: rgb(53, 58, 63);
+  padding-top: 3%;
+  padding-left: 0;
+}
+
+.modal-body {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  margin-right: 5%;
+  padding: 0;
+  text-align: justify;
+}
+
+.modal-body strong {
+  font-weight: 700;
+}
+
+.modal-footer {
+  background-color: #252A3D;
+}
+
+#modal-image {
+  padding-right: 0;
+}
+
+#modal-image img {
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  padding-left: 0;
+  object-fit: cover;
+  justify-content: center;
+}
+
+#errorBody {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin-top: 5%;
 }
 
 /* Anchor classes for in-page linking (do not change lightly) */
