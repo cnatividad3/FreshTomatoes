@@ -136,7 +136,7 @@ $(document).ready(function () {
     var stickyHeader = $("#stickyHeader");
     var modal = $("#movieModal");
     modal.attr("style", "padding-right:0px;");
-    stickyHeader.attr("style", "padding-right:10px;margin-right:0px;padding-left:10px;margin-left:0px;")
+    stickyHeader.attr("style", "padding-right:0px;margin-right:0px;padding-left:10px;margin-left:0px;")
 
     // ajax info for omdb
 

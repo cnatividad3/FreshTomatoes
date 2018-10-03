@@ -268,12 +268,20 @@ body {
     display: none;
   }
 
-  .posterImg {
+  .posterImg img {
     height: 25vh;
   }
 
   .img-div {
     margin-top: 0%;
     margin-bottom: 0%;
+  }
+
+  .modal-info {
+    margin-left: 12%;
+  }
+
+  #modal-image img {
+    margin-left: 3.5%;
   }
 }
