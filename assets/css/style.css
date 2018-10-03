@@ -4,24 +4,24 @@
 }
 
 mark {
-  color: red;
+  color: #E04057;
   background-color: transparent;
   padding: 0px;
-  text-shadow: 1.5px 1.5px green;
+  text-shadow: 1.5px 1.5px black;
 }
 
 body {
-  background-color: #8c8c8c;
+  background-color: #E9F0F2;
 }
 
 /* Classes */
 
 /* Navbar classes */
 .header-style {
-  background-color: #d9d9d9;
+  background-color: #EDE3D9;
   font-family: 'Pattaya', sans-serif;
   font-size: 45px;
-  
+
 }
 
 .header-style h1 {
@@ -30,13 +30,18 @@ body {
   top: 4px;
 }
 
-.modal-header {
-  font-family: 'Pattaya', sans-serif;
-  border-bottom: 2px solid green;
+.slogan {
+  float: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+  position: relative;
+  bottom: 28px;
+  margin-bottom: -25px;
 }
 
-.modal-title {
-  font-size: 30px;
+.navbar-style {
+  background: #284465;
 }
 
 .navbar-brand {
@@ -48,13 +53,10 @@ body {
 }
 
 .nav-item {
+  font-family: 'Pattaya', sans-serif;
   font-size: 20px;
   margin-bottom: -20px;
   padding-bottom: 10px;
-}
-
-.nav-link {
-  font-family: 'Pattaya', sans-serif;
 }
 
 .dropdown-item {
@@ -63,27 +65,40 @@ body {
   padding-top: 10px;
 }
 
-.btn {
+#navbarDropdown {
   color: white;
+}
+
+#stickyHeader {
+  border-bottom: 0.25vh solid white;
+}
+
+#find-movie {
+  font-family: 'Pattaya', sans-serif;
+  background-color: #E04057;
+  font-size: 16px;
+  color: white;
+}
+
+#find-movie:hover {
+  filter: brightness(130%);
 }
 
 /* Card classes */
 
 .card {
   position: relative;
-  background-color: #d9d9d9;
-
+  background-color: white;
 }
 
 .card-header {
-  background-color: rgb(53, 58, 63);
-  text-shadow: 1px 1px red;
+  background-color: #E04057;
   color: white;
   text-align: center;
   font-size: 30px;
   padding: 0px;
   font-family: 'Pattaya', sans-serif;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid white;
 }
 
 .title-text {
@@ -92,16 +107,22 @@ body {
 
 .posterImg {
   width: auto;
-  height: 18.5vw;
+  height: 34vh;
   object-fit: cover;
-  border: 1px solid black;
-  -webkit-animation: fadein 1.8s;
-  -moz-animation: fadein 1.8s;
-  -ms-animation: fadein 1.8s;
-  -o-animation: fadein 1.8s;
-  animation: fadein 1.8s;
+  border: 1px solid #DFDFDF;
+  -webkit-animation: fadein 2.0s;
+  -moz-animation: fadein 2.0s;
+  -ms-animation: fadein 2.0s;
+  -o-animation: fadein 2.0s;
+  animation: fadein 2.0s;
 }
 
+.posterImg:hover {
+  cursor: pointer;
+  filter: brightness(130%);
+}
+
+/* .posterImg animation */
 @keyframes fadein {
   from {
     opacity: 0;
@@ -156,7 +177,70 @@ body {
   }
 }
 
-/* Anchor classes for in-page linking (do not change) */
+/* Modal */
+
+.modal-header {
+  font-family: 'Pattaya', sans-serif;
+  border-bottom: 2px solid white;
+  background-color: #284465;
+  text-shadow: 1px 1px black;
+  color: white;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 30px;
+  width: 100%;
+}
+
+.modal-content {
+  background-color: white;
+}
+
+.modal-info {
+  color: rgb(53, 58, 63);
+  padding-top: 3%;
+  padding-left: 0;
+}
+
+.modal-body {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  margin-right: 5%;
+  padding: 0;
+  text-align: justify;
+}
+
+
+.modal-body strong {
+  font-weight: 700;
+}
+
+.modal-footer {
+  background-color: #284465;
+}
+
+#modal-image {
+  padding-right: 0;
+}
+
+#modal-image img {
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  padding-left: 0;
+  object-fit: cover;
+  justify-content: center;
+}
+
+#errorBody {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* Anchor classes for in-page linking (do not change lightly) */
 .dummy-anchor {
   position: absolute;
   left: 0px;
@@ -175,78 +259,21 @@ body {
   color: #FFC107;
 }
 
-.slogan {
-  float: right;
-  color: black;
-  font-size: 20px;
-  font-family: 'Merriweather', serif;
-  position: relative;
-  bottom: 28px;
-  margin-bottom: -30px;
-}
-
 /* IDs */
 
+/* media queries */
 
-#stickyHeader {
-  border-bottom: 1px solid red;
-}
+@media screen and (max-width: 768px) {
+  .slogan {
+    display: none;
+  }
 
-#navbarDropdown {
-  color: white;
-}
+  .posterImg {
+    height: 25vh;
+  }
 
-#find-movie {
-  font-family: 'Pattaya', sans-serif;
-  background-color: red;
-  font-size: 16px;
-}
-
-/* Modal */
-
-.modal-content {
-  background-color: #d9d9d9;
-}
-
-.modal-header {
-  background-color: rgb(53, 58, 63);
-  text-shadow: 1px 1px red;
-  color: white;
-  text-align: center;
-}
-
-.modal-title {
-  width: 100%;
-}
-
-.modal-info {
-  color: rgb(53, 58, 63);
-  padding-top: 3%;
-}
-
-.modal-footer {
-  background-color: rgb(53, 58, 63);
-}
-
-#modal-image img {
-  width: 100%;
-  height: auto;
-  margin: 5%;
-  object-fit: cover;
-  justify-content: center;
-}
-
-.modal-body {
-  margin-bottom: 5.0%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 0;
-  text-align: justify;
-  font-family: 'Merriweather', serif;
-}
-
-#errorBody {
-  text-align: center;
-  margin-top: 5%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  .img-div {
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
 }
