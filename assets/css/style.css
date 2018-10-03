@@ -4,7 +4,7 @@
 }
 
 mark {
-  color: #E03D48;
+  color: #E04057;
   background-color: transparent;
   padding: 0px;
   text-shadow: 1.5px 1.5px black;
@@ -18,7 +18,7 @@ body {
 
 /* Navbar classes */
 .header-style {
-  background-color: rgb(253, 253, 245);
+  background-color: #EDE3D9;
   font-family: 'Pattaya', sans-serif;
   font-size: 45px;
 
@@ -41,7 +41,7 @@ body {
 }
 
 .navbar-style {
-  background: #252A3D;
+  background: #284465;
 }
 
 .navbar-brand {
@@ -75,9 +75,13 @@ body {
 
 #find-movie {
   font-family: 'Pattaya', sans-serif;
-  background-color: #E14658;
+  background-color: #E04057;
   font-size: 16px;
   color: white;
+}
+
+#find-movie:hover {
+  filter: brightness(130%);
 }
 
 /* Card classes */
@@ -88,7 +92,7 @@ body {
 }
 
 .card-header {
-  background-color: #E03D48;
+  background-color: #E04057;
   color: white;
   text-align: center;
   font-size: 30px;
@@ -115,7 +119,6 @@ body {
 
 .posterImg:hover {
   cursor: pointer;
-  /* border: 1px solid #E9F0F2; */
   filter: brightness(130%);
 }
 
@@ -179,7 +182,7 @@ body {
 .modal-header {
   font-family: 'Pattaya', sans-serif;
   border-bottom: 2px solid white;
-  background-color: #252A3D;
+  background-color: #284465;
   text-shadow: 1px 1px black;
   color: white;
   text-align: center;
@@ -209,12 +212,13 @@ body {
   text-align: justify;
 }
 
+
 .modal-body strong {
   font-weight: 700;
 }
 
 .modal-footer {
-  background-color: #252A3D;
+  background-color: #284465;
 }
 
 #modal-image {
@@ -273,9 +277,3 @@ body {
     margin-bottom: 0%;
   }
 }
-
-/* breakpoint reference for bootstrap classes */
-/* xs (for phones - screens less than 768px wide)
-sm (for tablets - screens equal to or greater than 768px wide)
-md (for small laptops - screens equal to or greater than 992px wide)
-lg (for laptops and desktops - screens equal to or greater than 1200px wide) */
