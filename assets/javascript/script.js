@@ -2,6 +2,8 @@ $(document).ready(function () {
   
   //Counter variable for dropdown menu
   var counter = 0;
+
+  //error modals
   errorID = false;
   errorRec = false;
 
@@ -19,6 +21,7 @@ $(document).ready(function () {
 
     //ajax call that returns the moviedb id for the searched movie
 
+    //error modal listener if necessary
     $.ajax({
       url: searchURL,
       method: "GET"
